@@ -93,8 +93,6 @@ scripts/smoke-test.sh https://observatory.raiuz.site
 ## Honest notes
 
 - The organization is fictional, as the About page says. The data is real.
-- Built with AI coding assistants (Kiro, Claude, Codex). I reviewed, ran and
-  tested the changes, and fixed the problems found on the way (see closed issues).
 - Lighthouse runs on the server with simulated throttling, not field data.
   Automated checks do not prove WCAG conformance; a manual keyboard and screen
   reader review is still to do.
