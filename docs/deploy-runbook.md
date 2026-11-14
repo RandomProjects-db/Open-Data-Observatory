@@ -84,6 +84,7 @@ Use when post-deploy checks fail and a quick fix is not available.
    ```
    composer outdated 'drupal/*'
    ```
+   Do not add `--direct`: it hides indirect dependencies such as Token (required by Pathauto), which also receive security releases. Also run `composer audit`.
 2. Update on staging first (for example `composer update drupal/core-recommended --with-all-dependencies`), then run `drush updatedb`, `drush config:export` if config changed, and `drush cache:rebuild`.
 3. Test on staging: key pages, login, one report, one dataset, and the importer (`drush odo:import-worldbank`) if the update touches core or contributed modules it relies on.
 4. Commit the updated `composer.json`, `composer.lock` and any config. Merge through the normal pull request flow.
@@ -94,4 +95,5 @@ Use when post-deploy checks fail and a quick fix is not available.
 
 | Date | Change | Environment | Result | Rollback needed |
 |---|---|---|---|---|
-| | | | | |
+| 14 Nov 2026 | Rehearsal: drupal/token 1.17.0 to 1.18.0 (downgraded first, as no real update was pending). Tag, backup (998 KB), update, updatedb (none pending), config status clean, smoke test 7/7, aliases OK, composer.lock identical to main | Staging | Pass | No |
+| 15 Nov 2026 | First deploy staging to production by this runbook (runbook update itself); production switched to `composer install --no-dev` | Production | [see below] | |
