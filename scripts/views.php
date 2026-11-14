@@ -113,3 +113,61 @@ odo_listing('datasets', 'Datasets', 'datasets', 'dataset', [
 odo_listing('news', 'News', 'news', 'article', [
   ['node__field_topic', 'field_topic_target_id', 'topic', 'Topic', $term_filter('topic')],
 ]);
+
+/**
+ * Site search: one keyword box over titles and body text of all content.
+ *
+ * Core's node_search plugin is a deprecated stub on Drupal 11.4 (it moved to
+ * the search_node module, which requires core 11.5), so search is built with
+ * a Views "combine" filter instead.
+ */
+function odo_search_view(): void {
+  if ($existing = View::load('site_search')) {
+    $existing->delete();
+  }
+  $view = View::load('frontpage')->createDuplicate();
+  $view->set('id', 'site_search');
+  $view->set('label', 'Search');
+  $view->set('description', 'Keyword search across all published content.');
+  $displays = $view->get('display');
+  unset($displays['feed_1']);
+  $displays['default']['display_options']['title'] = 'Search';
+  $displays['default']['display_options']['pager'] = ['type' => 'full', 'options' => ['items_per_page' => 20]];
+  $displays['default']['display_options']['empty'] = [];
+  $displays['default']['display_options']['exposed_form'] = ['type' => 'basic', 'options' => ['submit_button' => 'Search']];
+  $displays['page_1']['display_options']['path'] = 'search';
+  $displays['page_1']['display_options']['display_extenders'] = [];
+  $view->set('display', $displays);
+
+  $exec = $view->getExecutable();
+  $exec->setDisplay('default');
+  $exec->removeHandler('default', 'filter', 'promote');
+  $exec->removeHandler('default', 'sort', 'sticky');
+  $exec->displayHandlers->get('default')->setOption('row', ['type' => 'fields']);
+  $exec->addHandler('default', 'field', 'node_field_data', 'title', ['label' => '', 'settings' => ['link_to_entity' => TRUE]]);
+  $exec->addHandler('default', 'field', 'node_field_data', 'type', ['label' => 'Type']);
+  $exec->addHandler('default', 'field', 'node__body', 'body', [
+    'label' => '',
+    'type' => 'text_summary_or_trimmed',
+    'settings' => ['trim_length' => 200],
+  ]);
+  $exec->addHandler('default', 'filter', 'views', 'combine', [
+    'operator' => 'allwords',
+    'fields' => ['title' => 'title', 'body' => 'body'],
+    'exposed' => TRUE,
+    'expose' => [
+      'identifier' => 'keys',
+      'label' => 'Search',
+      'operator_id' => 'keys_op',
+      'remember' => FALSE,
+      'placeholder' => 'Country, indicator or topic',
+    ],
+  ]);
+  $exec->addHandler('default', 'filter', 'node_field_data', 'type', [
+    'value' => ['report' => 'report', 'dataset' => 'dataset', 'article' => 'article', 'team_member' => 'team_member'],
+  ]);
+  $view->save();
+  echo "View ready: /search\n";
+}
+
+odo_search_view();

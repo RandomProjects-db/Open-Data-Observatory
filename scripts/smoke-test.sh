@@ -3,7 +3,7 @@
 # Run after every deploy or permission change:  scripts/smoke-test.sh [base-url]
 set -u
 BASE="${1:-https://observatory.raiuz.site}"
-PAGES=("/" "/reports" "/datasets" "/news" "/search/node" "/user/login" "/sitemap.xml")
+PAGES=("/" "/reports" "/datasets" "/news" "/search?keys=Lebanon" "/user/login" "/sitemap.xml")
 fail=0
 for p in "${PAGES[@]}"; do
   code=$(curl -sS -o /dev/null -m 15 -w "%{http_code}" "$BASE$p")

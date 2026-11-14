@@ -1,0 +1,23 @@
+uuid: dd0db46a-959a-43b0-9db5-77a58f8a505f
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.dataset
+  module:
+    - node
+id: dataset
+label: Dataset
+type: 'canonical_entities:node'
+pattern: '/datasets/[node:field_country_code]/[node:field_indicator_code]'
+selection_criteria:
+  8f131f80-ebd1-442a-bfca-2d662a18d106:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      dataset: dataset
+selection_logic: and
+weight: 1
+relationships: {  }

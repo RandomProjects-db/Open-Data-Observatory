@@ -1,0 +1,23 @@
+uuid: eca8ce7d-4006-47c3-a90a-958b6b58c1e2
+langcode: en
+status: true
+dependencies: {  }
+id: node__article
+label: 'Content: News'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'
+  canonical_url: '[node:url]'
+  og_title: '[node:title]'
+  og_description: '[node:summary]'
+  og_url: '[node:url]'
+  og_site_name: '[site:name]'
+  twitter_cards_type: summary
+  twitter_cards_title: '[node:title]'
+  og_type: article
+  schema_article_type: NewsArticle
+  schema_article_headline: '[node:title]'
+  schema_article_description: '[node:summary]'
+  schema_article_date_published: '[node:created:html_datetime]'
+  schema_article_date_modified: '[node:changed:html_datetime]'
+  schema_article_publisher: 'a:3:{s:5:"@type";s:12:"Organization";s:4:"name";s:11:"[site:name]";s:3:"url";s:10:"[site:url]";}'

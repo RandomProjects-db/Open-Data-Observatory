@@ -1,0 +1,23 @@
+uuid: ff19e28a-c446-4597-a7d1-227cd4ccba4a
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.team_member
+  module:
+    - node
+id: team_member
+label: 'Team member'
+type: 'canonical_entities:node'
+pattern: '/team/[node:title]'
+selection_criteria:
+  dcd7307c-9272-42fe-af2b-39cadde51418:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      team_member: team_member
+selection_logic: and
+weight: 3
+relationships: {  }

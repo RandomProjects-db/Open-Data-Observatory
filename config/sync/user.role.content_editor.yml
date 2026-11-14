@@ -3,7 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
+    - node.type.article
+    - node.type.dataset
+    - node.type.report
+    - node.type.team_member
+    - taxonomy.vocabulary.region
     - taxonomy.vocabulary.tags
+    - taxonomy.vocabulary.topic
   module:
     - contextual
     - file
@@ -24,11 +30,29 @@ permissions:
   - 'access contextual links'
   - 'access files overview'
   - 'access navigation'
+  - 'access site reports'
   - 'administer url aliases'
+  - 'create article content'
+  - 'create report content'
+  - 'create team_member content'
+  - 'create terms in region'
   - 'create terms in tags'
+  - 'create terms in topic'
   - 'create url aliases'
+  - 'delete own article content'
   - 'delete own files'
+  - 'delete own report content'
+  - 'delete own team_member content'
+  - 'edit any article content'
+  - 'edit any dataset content'
+  - 'edit any report content'
+  - 'edit any team_member content'
+  - 'edit own article content'
+  - 'edit own report content'
+  - 'edit own team_member content'
+  - 'edit terms in region'
   - 'edit terms in tags'
+  - 'edit terms in topic'
   - 'revert all revisions'
   - 'view all revisions'
   - 'view own unpublished content'

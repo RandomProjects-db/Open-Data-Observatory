@@ -1,0 +1,18 @@
+uuid: 196bf804-8d23-40f6-9a92-f7629059d25c
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1noCXlegCr5HFehQRF1ViXy1jhU1jZ_sNN99a8Sj5jo
+id: front
+label: 'Front page'
+tags:
+  canonical_url: '[site:url]'
+  shortlink: '[site:url]'
+  description: 'Open Data Observatory publishes reports and World Bank indicator datasets on population, economy, health, energy and environment.'
+  schema_organization_type: Organization
+  schema_organization_name: '[site:name]'
+  schema_organization_url: '[site:url]'
+  schema_web_site_type: WebSite
+  schema_web_site_name: '[site:name]'
+  schema_web_site_url: '[site:url]'

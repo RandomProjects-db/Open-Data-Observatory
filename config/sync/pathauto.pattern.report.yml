@@ -1,0 +1,23 @@
+uuid: b7c1007e-dd86-4b13-8b2d-8b95448eed63
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.report
+  module:
+    - node
+id: report
+label: Report
+type: 'canonical_entities:node'
+pattern: '/reports/[node:title]'
+selection_criteria:
+  faff1f72-841e-4657-a973-77f7b20480f5:
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: node
+    bundles:
+      report: report
+selection_logic: and
+weight: 0
+relationships: {  }

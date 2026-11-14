@@ -1,0 +1,19 @@
+uuid: c94295d9-4f57-4818-91a3-88454253e63f
+langcode: en
+status: true
+dependencies: {  }
+id: node__team_member
+label: 'Content: Team Member'
+tags:
+  title: '[node:title] | [site:name]'
+  description: '[node:summary]'
+  canonical_url: '[node:url]'
+  og_title: '[node:title]'
+  og_description: '[node:summary]'
+  og_url: '[node:url]'
+  og_site_name: '[site:name]'
+  twitter_cards_type: summary
+  twitter_cards_title: '[node:title]'
+  og_type: profile
+  schema_person_type: Person
+  schema_person_name: '[node:title]'

@@ -1,0 +1,3 @@
+
+# Open Data Observatory
+Sitemap: https://observatory.raiuz.site/sitemap.xml
