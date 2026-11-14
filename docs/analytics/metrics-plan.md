@@ -40,3 +40,20 @@ This is a demo property with very little traffic. Figures demonstrate the setup 
 - Each page pushes `content_type`, `topic` and `region` to `dataLayer` for custom dimensions.
 - GA4 itself is configured inside Tag Manager (Google tag with the GA4 Measurement ID,
   trigger Initialization - All Pages).
+
+## Verification (15 Nov 2026)
+
+`scripts/analytics-check.mjs` (headless Chrome on the server) loads the site, clicks
+"Allow analytics" and records GA4 requests:
+
+| Step | Result |
+|---|---|
+| First visit | Consent banner shown |
+| Before consent | `page_view` sent as a cookieless ping (`gcs=G100`, storage denied); no `_ga` cookies |
+| After consent | `page_view` with `gcs=G101` (analytics granted, ads denied); `_ga` and `_ga_P66SFZQDY6` cookies set |
+| Destination | GA4 stream `G-P66SFZQDY6` (Open Data Observatory). Hits also go to `G-0GJBWBCZM7`, a second destination linked to the Google tag; unlink it if not needed. |
+
+Search Console: property verified with the Metatag Verification tag; `sitemap.xml` submitted
+and read successfully (63 URLs) after the base URL fix.
+
+Run again: `/opt/node/bin/node scripts/analytics-check.mjs`
