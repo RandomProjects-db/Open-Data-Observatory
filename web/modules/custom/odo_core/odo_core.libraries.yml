@@ -1,0 +1,10 @@
+consent:
+  version: 1.0
+  css:
+    component:
+      css/consent.css: {}
+  js:
+    js/consent.js: { attributes: { defer: true } }
+  dependencies:
+    - core/drupal
+    - core/once

@@ -1,0 +1,24 @@
+.odo-consent {
+  position: fixed;
+  inset-inline: 1rem;
+  inset-block-end: 1rem;
+  z-index: 1000;
+  max-width: 36rem;
+  margin-inline: auto;
+  padding: 1rem 1.25rem;
+  border: 1px solid #d0d7de;
+  border-radius: 6px;
+  background: #fff;
+  color: #1b1f23;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 15%);
+}
+
+.odo-consent p {
+  margin: 0 0 0.75rem;
+}
+
+.odo-consent__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}

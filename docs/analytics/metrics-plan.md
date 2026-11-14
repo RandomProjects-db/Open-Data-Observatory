@@ -27,3 +27,16 @@ This is a demo property with very little traffic. Figures demonstrate the setup 
 - Consent mode: analytics storage denied until accepted.
 - GA4 does not log or store IP addresses.
 - Data retention: 2 months (GA4 minimum).
+
+## Implementation (as built, 15 Nov 2026)
+
+- Google Tag Manager container `GTM-T44MKJ8C`, added by `odo_core_page_attachments()` in
+  `web/modules/custom/odo_core/odo_core.module`.
+- The ID is read from `$settings['odo_gtm_id']` in production `settings.php` only, so staging
+  and local copies send nothing. The value must match `GTM-` or `G-` plus 4 to 12 characters.
+- Not added on admin routes.
+- Consent mode defaults to denied for analytics and ads storage. `odo_core/js/consent.js` shows
+  an "Allow analytics / No thanks" banner and stores the choice in `localStorage` (`odo_consent`).
+- Each page pushes `content_type`, `topic` and `region` to `dataLayer` for custom dimensions.
+- GA4 itself is configured inside Tag Manager (Google tag with the GA4 Measurement ID,
+  trigger Initialization - All Pages).
