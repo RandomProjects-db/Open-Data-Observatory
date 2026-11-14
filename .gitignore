@@ -22,3 +22,6 @@
 
 # Raw Lighthouse output (several MB); summaries are committed
 docs/reports/lighthouse/**/*.json
+
+# Environment-specific Drush site URI
+/drush/drush.yml
