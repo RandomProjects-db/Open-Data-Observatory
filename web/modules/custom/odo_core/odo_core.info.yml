@@ -1,0 +1,9 @@
+name: 'ODO Core'
+type: module
+description: 'Open Data Observatory: World Bank indicator importer and site blocks.'
+package: 'Open Data Observatory'
+core_version_requirement: ^11
+dependencies:
+  - drupal:node
+  - drupal:taxonomy
+  - drupal:link

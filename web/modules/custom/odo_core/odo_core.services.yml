@@ -1,0 +1,11 @@
+services:
+  logger.channel.odo_core:
+    parent: logger.channel_base
+    arguments: ['odo_core']
+
+  odo_core.worldbank_importer:
+    class: Drupal\odo_core\WorldBankImporter
+    arguments:
+      - '@http_client'
+      - '@entity_type.manager'
+      - '@logger.channel.odo_core'

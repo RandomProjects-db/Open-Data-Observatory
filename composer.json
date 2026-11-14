@@ -86,7 +86,7 @@
             ],
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  Congratulations, you\u2019ve installed the Drupal codebase  </>",
                 "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
                 "<bg=blue;fg=white>                                                         </>",
                 "",
@@ -100,5 +100,15 @@
                 "      composer remove drupal/core-project-message"
             ]
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Drupal\\odo_core\\": "web/modules/custom/odo_core/src/",
+            "Drupal\\Tests\\odo_core\\": "web/modules/custom/odo_core/tests/src/"
+        }
+    },
+    "require-dev": {
+        "drupal/coder": "^9.0",
+        "phpunit/phpunit": "^12.5"
     }
 }
