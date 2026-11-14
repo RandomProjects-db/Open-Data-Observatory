@@ -26,3 +26,4 @@ Times are UTC. Commit hashes link to https://github.com/RandomProjects-db/Open-D
 | End-to-end analytics check script (`0598546`) |
 | Staging environment live at https://staging.observatory.raiuz.site (noindex, no analytics, own database) |
 | Update rehearsal on staging (drupal/token 1.17.0 to 1.18.0); first production deploy by the runbook (`ec12bca`, tag `pre-deploy-20261114-2256`); production now installs without dev tools |
+| GitHub billing resolved; first green CI run (PHPCS, PHPUnit, settings.php guard); issue #11 closed |

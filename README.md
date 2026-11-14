@@ -96,7 +96,6 @@ scripts/smoke-test.sh https://observatory.raiuz.site
 - Lighthouse runs on the server with simulated throttling, not field data.
   Automated checks do not prove WCAG conformance; a manual keyboard and screen
   reader review is still to do.
-- GitHub Actions CI is configured but blocked by an account billing issue (#11);
-  the same checks run on the server before each commit.
+- GitHub Actions CI runs PHPCS, PHPUnit and a settings.php guard on every push to main and staging.
 
 Author: Fahed Daibes
