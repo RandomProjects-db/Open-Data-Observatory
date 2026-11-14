@@ -29,7 +29,7 @@ Always deploy to staging first and verify before touching production. Run drush 
    vendor/bin/drush sql:dump --gzip --result-file=$HOME/backups/odo-pre-deploy-YYYYMMDD-HHMM.sql
    ls -lh ~/backups/odo-pre-deploy-YYYYMMDD-HHMM.sql.gz
    ```
-   Check the file exists and is not empty before continuing.
+   Check the file exists and is not empty before continuing. These pre-deploy dumps are separate from the nightly backups in `/var/backups/odo` (see `docs/operations.md`).
 
 ## 2. Deploy
 
