@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches: [main, staging]
+  pull_request:
+    branches: [main, staging]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          extensions: gd, pdo_mysql, mbstring, xml, zip, intl
+          tools: composer:v2
+
+      - name: Get Composer cache directory
+        id: composer-cache
+        run: echo "dir=$(composer config cache-files-dir)" >> "$GITHUB_OUTPUT"
+
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: composer-${{ runner.os }}-${{ hashFiles('composer.lock') }}
+          restore-keys: composer-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Fail if settings.php is tracked
+        run: |
+          tracked="$(git ls-files 'web/sites/*/settings.php')"
+          if [ -n "$tracked" ]; then
+            echo "settings.php must not be committed:"
+            echo "$tracked"
+            exit 1
+          fi
+
+      - name: Coding standards (phpcs)
+        run: vendor/bin/phpcs --standard=Drupal,DrupalPractice --extensions=php,module,yml web/modules/custom
+
+      - name: Unit tests (phpunit)
+        run: vendor/bin/phpunit --colors=never web/modules/custom/odo_core/tests/src/Unit
