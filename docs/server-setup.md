@@ -86,3 +86,14 @@ nor admin password appears in staged files.
 
 Node.js 22 (checksum-verified tarball in `/opt/node`), Google Chrome and Lighthouse in
 `/opt/lighthouse`, used only by `scripts/lighthouse.sh`.
+
+## 9. Site URL for command-line jobs
+
+Drush and cron have no request host, so absolute URLs generated outside a web request
+defaulted to `http://default`. Google Search Console rejected all 63 sitemap URLs because of
+this. Production now sets:
+
+- `settings.php`: `$config['simple_sitemap.settings']['base_url'] = 'https://observatory.raiuz.site';`
+- `drush/drush.yml` (not committed, environment-specific): `options: uri: https://observatory.raiuz.site`
+
+Staging needs its own values for both.
