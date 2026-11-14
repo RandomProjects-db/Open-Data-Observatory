@@ -1,0 +1,23 @@
+uuid: a30bad6f-38e5-4af3-b13b-a04e44aa76fb
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latest_value
+    - node.type.dataset
+id: node.dataset.field_latest_value
+field_name: field_latest_value
+entity_type: node
+bundle: dataset
+label: 'Latest value'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

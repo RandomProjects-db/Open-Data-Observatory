@@ -1,0 +1,11 @@
+uuid: 056cb6ab-4aae-4280-9c4e-57e9223fb952
+langcode: en
+status: true
+dependencies: {  }
+name: Dataset
+type: dataset
+description: 'Indicator time series imported from open data sources.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

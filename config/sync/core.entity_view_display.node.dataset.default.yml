@@ -1,0 +1,110 @@
+uuid: 5593f7e0-c1da-47ee-964e-5482bb1f6622
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.dataset.body
+    - field.field.node.dataset.field_country_code
+    - field.field.node.dataset.field_indicator_code
+    - field.field.node.dataset.field_latest_value
+    - field.field.node.dataset.field_latest_year
+    - field.field.node.dataset.field_region
+    - field.field.node.dataset.field_series
+    - field.field.node.dataset.field_source_url
+    - field.field.node.dataset.field_topic
+    - node.type.dataset
+  module:
+    - link
+    - text
+    - user
+id: node.dataset.default
+targetEntityType: node
+bundle: dataset
+mode: default
+content:
+  body:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_country_code:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 123
+    region: content
+  field_indicator_code:
+    type: string
+    label: inline
+    settings:
+      link_to_entity: false
+      link_rel: canonical
+    third_party_settings: {  }
+    weight: 122
+    region: content
+  field_latest_value:
+    type: number_decimal
+    label: inline
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 125
+    region: content
+  field_latest_year:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 124
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 120
+    region: content
+  field_series:
+    type: basic_string
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 126
+    region: content
+  field_source_url:
+    type: link
+    label: inline
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 127
+    region: content
+  field_topic:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 121
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

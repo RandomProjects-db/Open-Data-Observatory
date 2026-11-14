@@ -1,0 +1,24 @@
+uuid: 2ac8dd0c-28da-460d-a495-f6a06d44e135
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_region
+    - node.type.report
+    - taxonomy.vocabulary.region
+id: node.report.field_region
+field_name: field_region
+entity_type: node
+bundle: report
+label: Region
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      region: region
+field_type: entity_reference

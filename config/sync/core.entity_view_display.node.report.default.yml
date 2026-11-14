@@ -1,0 +1,66 @@
+uuid: 98207a24-0f68-496d-9239-256a4b41f96a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.report.body
+    - field.field.node.report.field_region
+    - field.field.node.report.field_report_file
+    - field.field.node.report.field_topic
+    - field.field.node.report.field_year
+    - node.type.report
+  module:
+    - file
+    - text
+    - user
+id: node.report.default
+targetEntityType: node
+bundle: report
+mode: default
+content:
+  body:
+    type: text_default
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_region:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_report_file:
+    type: file_default
+    label: inline
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_topic:
+    type: entity_reference_label
+    label: inline
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_year:
+    type: number_integer
+    label: inline
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

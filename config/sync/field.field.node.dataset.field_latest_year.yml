@@ -1,0 +1,23 @@
+uuid: 3aea0170-ecec-4e51-a89c-131e5b3b8b52
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_latest_year
+    - node.type.dataset
+id: node.dataset.field_latest_year
+field_name: field_latest_year
+entity_type: node
+bundle: dataset
+label: 'Latest year'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

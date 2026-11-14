@@ -1,0 +1,11 @@
+uuid: 2c5c8c36-6c16-4785-98b0-d07c2dd574e8
+langcode: en
+status: true
+dependencies: {  }
+name: Report
+type: report
+description: 'Research reports and analysis publications.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

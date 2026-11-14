@@ -1,0 +1,24 @@
+uuid: 37071b78-3be1-4dea-8668-b98f080b06a9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.report
+  module:
+    - text
+id: node.report.body
+field_name: body
+entity_type: node
+bundle: report
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+  required_summary: false
+  allowed_formats: {  }
+field_type: text_with_summary
