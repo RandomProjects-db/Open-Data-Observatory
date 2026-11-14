@@ -22,3 +22,7 @@ Times are UTC. Commit hashes link to https://github.com/RandomProjects-db/Open-D
 | Change |
 |---|
 | Full documentation set: architecture, server setup, content model, configuration management, module and theme guides, operations, security, SEO audit template, changelog, remaining work |
+| Google Tag Manager with consent mode (`d30f252`); Search Console verified (`8b63f36`); sitemap base URL fixed, 63 URLs accepted |
+| End-to-end analytics check script (`0598546`) |
+| Staging environment live at https://staging.observatory.raiuz.site (noindex, no analytics, own database) |
+| Update rehearsal on staging (drupal/token 1.17.0 to 1.18.0); first production deploy by the runbook (`ec12bca`, tag `pre-deploy-20261114-2256`); production now installs without dev tools |

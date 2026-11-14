@@ -21,7 +21,7 @@ Twitter Cards, Verification), Schema.org Metatag 3.1, Simple XML Sitemap 4.2.3, 
 | Environment | Path | URL | Database | Git branch |
 |---|---|---|---|---|
 | Production | `/var/www/odo` | https://observatory.raiuz.site | `odo` (user `odo`) | `main` |
-| Staging | `/var/www/odo-staging` | https://staging.observatory.raiuz.site (pending DNS) | `odo_staging` (user `odo_staging`) | `staging` |
+| Staging | `/var/www/odo-staging` | https://staging.observatory.raiuz.site | `odo_staging` (user `odo_staging`) | `staging` |
 
 Both run on the same server. Each database user can only access its own database.
 

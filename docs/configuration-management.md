@@ -52,6 +52,9 @@ Full procedure, including backups and rollback: [deploy runbook](deploy-runbook.
 
 ## Git workflow
 
-- `main` is production. `staging` tracks what is deployed to staging.
+- Work happens in the staging copy (`/var/www/odo-staging`). Run PHPCS, PHPUnit and a secret
+  scan there, commit, and push to both `staging` and `main`.
+- Production (`/var/www/odo`) only receives code through the deploy runbook (`git pull`,
+  `composer install --no-dev`), so it has no test tools and no local changes.
 - Commit messages follow `type: description` (feat, fix, docs, chore).
-- Before each commit on the server: PHPCS, PHPUnit and a secret scan of staged files.
+- Until 15 Nov 2026 commits were made directly on production while staging did not exist yet.

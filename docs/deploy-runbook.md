@@ -96,4 +96,4 @@ Use when post-deploy checks fail and a quick fix is not available.
 | Date | Change | Environment | Result | Rollback needed |
 |---|---|---|---|---|
 | 14 Nov 2026 | Rehearsal: drupal/token 1.17.0 to 1.18.0 (downgraded first, as no real update was pending). Tag, backup (998 KB), update, updatedb (none pending), config status clean, smoke test 7/7, aliases OK, composer.lock identical to main | Staging | Pass | No |
-| 15 Nov 2026 | First deploy staging to production by this runbook (runbook update itself); production switched to `composer install --no-dev` | Production | [see below] | |
+| 15 Nov 2026 | First deploy staging to production by this runbook (runbook update itself); production switched to `composer install --no-dev` | Production | Pass: tag pre-deploy-20261114-2256, backup 1.7 MB, smoke 7/7, config in sync, 0 PHP errors | No |
