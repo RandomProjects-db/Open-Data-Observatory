@@ -5,6 +5,7 @@ organization, built and run end to end as a portfolio project.
 
 **Live site:** https://observatory.raiuz.site
 **Request board:** https://github.com/users/RandomProjects-db/projects/1
+**Documentation:** [docs/README.md](docs/README.md)
 
 It publishes 40 World Bank indicator datasets (8 countries, 5 indicators), data-driven
 country comparison reports, news, search, and accessible charts.
