@@ -101,10 +101,11 @@ odo_type('report', 'Report', 'Research reports and analysis publications.');
 odo_type('dataset', 'Dataset', 'Indicator time series imported from open data sources.');
 odo_type('article', 'News', 'News and announcements.');
 odo_type('team_member', 'Team Member', 'Staff and contributors shown on the team page.');
+odo_type('page', 'Basic page', 'Static pages such as About.');
 
 // Body field: core's node_add_body_field() helper fails on Drupal 11.4,
 // so attach the existing "body" storage directly.
-foreach (['report', 'dataset', 'article', 'team_member'] as $bundle) {
+foreach (['report', 'dataset', 'article', 'team_member', 'page'] as $bundle) {
   odo_field($bundle, 'body', 'text_with_summary', 'Body', [], ['display_summary' => TRUE]);
 }
 

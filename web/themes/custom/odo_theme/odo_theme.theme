@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Theme hooks for ODO Theme.
+ */
+
+declare(strict_types=1);
+
+/**
+ * Implements hook_preprocess_HOOK() for node templates.
+ *
+ * Decodes the dataset series JSON once so the template can render the
+ * accessible data table. Invalid JSON yields an empty series (no chart).
+ */
+function odo_theme_preprocess_node(array &$variables): void {
+  $node = $variables['node'];
+  if ($node->bundle() !== 'dataset' || $variables['view_mode'] !== 'full') {
+    return;
+  }
+  $raw = (string) $node->get('field_series')->value;
+  $series = json_decode($raw, TRUE);
+  $variables['series'] = is_array($series) ? $series : [];
+  $variables['series_json'] = is_array($series) ? $raw : '';
+}

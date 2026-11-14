@@ -1,0 +1,78 @@
+/**
+ * @file
+ * Open Data Observatory brand and accessibility overrides for Olivero.
+ */
+
+:root {
+  /* Brand: deep teal. #0b5563 on white is 7.9:1 (WCAG AAA for text). */
+  --color--primary-hue: 190;
+  --color--primary-saturation: 80%;
+  --color--primary-lightness: 21;
+  --odo-ink: #1b1f23;
+  --odo-muted: #4a5560; /* 7.4:1 on white */
+  --odo-rule: #d0d7de;
+  --odo-surface: #f6f8fa;
+}
+
+/* Visible keyboard focus everywhere (WCAG 2.4.7, 2.4.11). */
+:focus-visible {
+  outline: 3px solid #0b5563;
+  outline-offset: 2px;
+}
+
+/* Data tables: readable, scrollable on small screens. */
+.views-view-table,
+.odo-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.views-view-table th,
+.views-view-table td,
+.odo-data-table th,
+.odo-data-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--odo-rule);
+  text-align: start;
+}
+
+.views-view-table thead th,
+.odo-data-table thead th {
+  background: var(--odo-surface);
+  color: var(--odo-ink);
+}
+
+.view-datasets .view-content {
+  overflow-x: auto;
+}
+
+/* Exposed filters laid out in a row on wider screens. */
+.views-exposed-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+/* Search results. */
+.view-site-search .views-row {
+  padding-block: 1rem;
+  border-bottom: 1px solid var(--odo-rule);
+}
+
+.view-site-search .views-field-type {
+  color: var(--odo-muted);
+  font-size: 0.875rem;
+}
+
+/* Respect reduced-motion preferences (WCAG 2.3.3). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

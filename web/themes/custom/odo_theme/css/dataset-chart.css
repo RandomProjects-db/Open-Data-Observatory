@@ -1,0 +1,34 @@
+.odo-chart {
+  margin-block: 1.5rem;
+}
+
+.odo-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 48rem;
+}
+
+.odo-chart__line {
+  fill: none;
+  stroke: #0b5563;
+  stroke-width: 2.5;
+}
+
+.odo-chart__axis {
+  stroke: #4a5560;
+  stroke-width: 1;
+}
+
+.odo-chart__label {
+  fill: #4a5560;
+  font-size: 12px;
+}
+
+.odo-chart__point {
+  fill: #0b5563;
+}
+
+.odo-chart details {
+  margin-top: 1rem;
+}

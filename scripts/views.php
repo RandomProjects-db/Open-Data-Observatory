@@ -170,4 +170,6 @@ function odo_search_view(): void {
   echo "View ready: /search\n";
 }
 
+odo_listing('team', 'Team', 'team', 'team_member', []);
+
 odo_search_view();
