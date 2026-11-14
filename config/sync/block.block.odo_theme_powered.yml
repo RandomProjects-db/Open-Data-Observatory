@@ -1,0 +1,22 @@
+uuid: 82f2df80-a91b-4701-b5f7-7247cee6dc10
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - odo_theme
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: odo_theme_powered
+theme: odo_theme
+region: footer_bottom
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

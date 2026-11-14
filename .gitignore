@@ -19,3 +19,6 @@
 # Environment and secrets
 .env
 *.env
+
+# Raw Lighthouse output (several MB); summaries are committed
+docs/reports/lighthouse/**/*.json

@@ -21,7 +21,7 @@ content:
     label: inline
     settings: {  }
     third_party_settings: {  }
-    weight: 107
+    weight: 110
     region: content
   field_job_title:
     type: string
@@ -30,7 +30,7 @@ content:
       link_to_entity: false
       link_rel: canonical
     third_party_settings: {  }
-    weight: 108
+    weight: 111
     region: content
   field_photo:
     type: image
@@ -41,7 +41,7 @@ content:
       image_loading:
         attribute: lazy
     third_party_settings: {  }
-    weight: 109
+    weight: 112
     region: content
   links:
     settings: {  }

@@ -1,4 +1,4 @@
-uuid: 202f95d3-91be-4e67-935b-e4d046ec2682
+uuid: a3d2c38e-6212-447d-b22f-c5aa546c6fdd
 langcode: en
 status: true
 dependencies:
@@ -187,12 +187,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'News and updates from the Open Data Observatory.'
+          tokenize: false
       path: news
       menu:
         type: normal
         title: News
-        weight: 15
+        weight: 16
         menu_name: main
     cache_metadata:
       max-age: -1

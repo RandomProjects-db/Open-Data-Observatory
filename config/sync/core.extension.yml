@@ -29,6 +29,7 @@ module:
   metatag_open_graph: 0
   metatag_twitter_cards: 0
   metatag_verification: 0
+  metatag_views: 0
   mysql: 0
   navigation: 0
   node: 0
@@ -58,4 +59,5 @@ module:
 theme:
   olivero: 0
   claro: 0
+  odo_theme: 0
 profile: standard

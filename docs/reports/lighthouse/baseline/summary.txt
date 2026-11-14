@@ -1,0 +1,25 @@
+home      | perf 99 | a11y 96 | bp 100 | seo 100 | LCP 1.7 s | CLS 0 | TBT 0 ms
+    - link-in-text-block: Links rely on color to be distinguishable.
+    - unused-css-rules: Reduce unused CSS
+    - modern-http-insight: Modern HTTP
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+datasets  | perf 99 | a11y 99 | bp 100 | seo 92 | LCP 1.7 s | CLS 0 | TBT 0 ms
+    - heading-order: Heading elements are not in a sequentially-descending order
+    - unused-css-rules: Reduce unused CSS
+    - meta-description: Document does not have a meta description
+    - modern-http-insight: Modern HTTP
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+dataset   | perf 99 | a11y 100 | bp 100 | seo 100 | LCP 1.7 s | CLS 0 | TBT 0 ms
+    - unused-css-rules: Reduce unused CSS
+    - modern-http-insight: Modern HTTP
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+report    | perf 99 | a11y 100 | bp 100 | seo 92 | LCP 1.7 s | CLS 0 | TBT 0 ms
+    - unused-css-rules: Reduce unused CSS
+    - meta-description: Document does not have a meta description
+    - modern-http-insight: Modern HTTP
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+DONE

@@ -1,0 +1,20 @@
+uuid: c7175a78-9474-4226-b4e3-d40d48bb43b6
+langcode: en
+status: true
+dependencies:
+  theme:
+    - odo_theme
+_core:
+  default_config_hash: 6aOgWsNTXjqrDm98TXSAjP6qd2nCijD1xw45MrnbK-Y
+id: odo_theme_page_title
+theme: odo_theme
+region: content_above
+weight: -5
+provider: null
+plugin: page_title_block
+settings:
+  id: page_title_block
+  label: 'Page title'
+  label_display: '0'
+  provider: core
+visibility: {  }

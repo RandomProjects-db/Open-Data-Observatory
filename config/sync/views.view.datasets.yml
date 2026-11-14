@@ -1,4 +1,4 @@
-uuid: 853019e2-e826-475c-b9c4-d63a9ed3de4e
+uuid: 3a5690e3-afc5-4b96-a620-5ef8a55ff274
 langcode: en
 status: true
 dependencies:
@@ -252,12 +252,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'Browse 40 World Bank indicator datasets for eight countries. Filter by region, topic or country and view each series as a chart and table.'
+          tokenize: false
       path: datasets
       menu:
         type: normal
         title: Datasets
-        weight: 15
+        weight: 16
         menu_name: main
     cache_metadata:
       max-age: -1

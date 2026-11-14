@@ -17,7 +17,7 @@ use Drupal\views\Entity\View;
 /**
  * Builds a listing view for one content type.
  */
-function odo_listing(string $id, string $label, string $path, string $bundle, array $exposed, array $table_fields = []): void {
+function odo_listing(string $id, string $label, string $path, string $bundle, array $exposed, array $table_fields = [], string $description = ''): void {
   if ($existing = View::load($id)) {
     $existing->delete();
   }
@@ -34,7 +34,9 @@ function odo_listing(string $id, string $label, string $path, string $bundle, ar
   // Clone carries the frontpage's empty-text and feed links; drop them.
   $displays['default']['display_options']['empty'] = [];
   $displays['page_1']['display_options']['path'] = $path;
-  $displays['page_1']['display_options']['display_extenders'] = [];
+  $displays['page_1']['display_options']['display_extenders'] = $description === '' ? [] : [
+    'metatag_display_extender' => ['metatags' => ['description' => $description], 'tokenize' => FALSE],
+  ];
   unset($displays['page_1']['display_options']['display_description']);
   $displays['page_1']['display_options']['menu'] = [
     'type' => 'normal',
@@ -97,7 +99,7 @@ odo_listing('reports', 'Reports', 'reports', 'report', [
   ['node__field_region', 'field_region_target_id', 'region', 'Region', $term_filter('region')],
   ['node__field_topic', 'field_topic_target_id', 'topic', 'Topic', $term_filter('topic')],
   ['node__field_year', 'field_year_value', 'year', 'Year'],
-]);
+], [], 'Country comparison reports on population, GDP per capita, life expectancy, access to electricity and forest area, built from World Bank Open Data.');
 
 odo_listing('datasets', 'Datasets', 'datasets', 'dataset', [
   ['node__field_region', 'field_region_target_id', 'region', 'Region', $term_filter('region')],
@@ -108,11 +110,11 @@ odo_listing('datasets', 'Datasets', 'datasets', 'dataset', [
   ['node__field_topic', 'field_topic', 'Topic'],
   ['node__field_latest_year', 'field_latest_year', 'Latest year'],
   ['node__field_latest_value', 'field_latest_value', 'Latest value'],
-]);
+], 'Browse 40 World Bank indicator datasets for eight countries. Filter by region, topic or country and view each series as a chart and table.');
 
 odo_listing('news', 'News', 'news', 'article', [
   ['node__field_topic', 'field_topic_target_id', 'topic', 'Topic', $term_filter('topic')],
-]);
+], [], 'News and updates from the Open Data Observatory.');
 
 /**
  * Site search: one keyword box over titles and body text of all content.
@@ -170,6 +172,6 @@ function odo_search_view(): void {
   echo "View ready: /search\n";
 }
 
-odo_listing('team', 'Team', 'team', 'team_member', []);
+odo_listing('team', 'Team', 'team', 'team_member', [], [], 'The people who build and run the Open Data Observatory.');
 
 odo_search_view();

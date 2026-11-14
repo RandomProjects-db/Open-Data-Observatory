@@ -1,4 +1,4 @@
-uuid: e85eb818-35bd-45f8-b054-e0b7b9c10dd4
+uuid: b8aa2e99-22e7-4184-80fa-e60caef60a81
 langcode: en
 status: true
 dependencies:
@@ -214,12 +214,16 @@ display:
     display_plugin: page
     position: 1
     display_options:
-      display_extenders: {  }
+      display_extenders:
+        metatag_display_extender:
+          metatags:
+            description: 'Country comparison reports on population, GDP per capita, life expectancy, access to electricity and forest area, built from World Bank Open Data.'
+          tokenize: false
       path: reports
       menu:
         type: normal
         title: Reports
-        weight: 15
+        weight: 16
         menu_name: main
     cache_metadata:
       max-age: -1

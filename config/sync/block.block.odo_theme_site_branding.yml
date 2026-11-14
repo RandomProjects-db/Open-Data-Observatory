@@ -1,0 +1,25 @@
+uuid: 2c2a283a-0154-4c73-b88c-a6e17caf7a36
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - odo_theme
+_core:
+  default_config_hash: '-OAAZDw1OR_UyAEPEKX0Hu4LaZD149vW9PmMnIC-v0o'
+id: odo_theme_site_branding
+theme: odo_theme
+region: header
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: false
+  use_site_name: true
+  use_site_slogan: true
+visibility: {  }

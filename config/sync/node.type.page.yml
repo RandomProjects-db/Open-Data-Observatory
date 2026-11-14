@@ -1,0 +1,11 @@
+uuid: eb463259-95bf-4fed-962c-fc56d6feada1
+langcode: en
+status: true
+dependencies: {  }
+name: 'Basic page'
+type: page
+description: 'Static pages such as About.'
+help: null
+new_revision: true
+preview_mode: 1
+display_submitted: true

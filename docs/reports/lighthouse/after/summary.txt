@@ -1,0 +1,17 @@
+home      | perf 100 | a11y 100 | bp 100 | seo 100 | LCP 1.2 s | CLS 0 | TBT 10 ms
+    - unused-css-rules: Reduce unused CSS
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+datasets  | perf 100 | a11y 100 | bp 100 | seo 100 | LCP 1.2 s | CLS 0 | TBT 0 ms
+    - unused-css-rules: Reduce unused CSS
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+dataset   | perf 100 | a11y 100 | bp 100 | seo 100 | LCP 1.2 s | CLS 0.006 | TBT 10 ms
+    - unused-css-rules: Reduce unused CSS
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+report    | perf 100 | a11y 100 | bp 100 | seo 100 | LCP 1.2 s | CLS 0 | TBT 0 ms
+    - unused-css-rules: Reduce unused CSS
+    - network-dependency-tree-insight: Network dependency tree
+    - render-blocking-insight: Render-blocking requests
+DONE

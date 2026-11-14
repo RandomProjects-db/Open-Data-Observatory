@@ -1,0 +1,25 @@
+uuid: ace66601-c4c6-43ee-bad1-f6b330552f64
+langcode: en
+status: true
+dependencies:
+  module:
+    - odo_core
+    - system
+  theme:
+    - odo_theme
+id: odo_theme_latest_datasets
+theme: odo_theme
+region: content_below
+weight: 0
+provider: null
+plugin: odo_latest_datasets
+settings:
+  id: odo_latest_datasets
+  label: 'Latest datasets'
+  label_display: visible
+  provider: odo_core
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
