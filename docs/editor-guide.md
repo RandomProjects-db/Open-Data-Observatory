@@ -26,7 +26,7 @@ Fields: **Title** (the person's name), **Job title**, **Photo** (alt text is req
 
 ## 3. Taxonomies
 
-**Region** and **Topic** are lists of terms. Choose from the existing terms. If none fits, ask the web coordinator before adding a new term, so the lists stay consistent.
+**Region** and **Topic** are lists of terms. Choose from the existing terms. If none fits, ask the web team before adding a new term, so the lists stay consistent.
 
 [Screenshot: Region and Topic fields on a content form]
 
@@ -88,4 +88,4 @@ Write a short summary (about 150 characters) that explains the page in plain wor
 
 ## 8. Getting help
 
-Open a GitHub issue using the matching template, or contact the web coordinator. See the triage policy for response times.
+Open a GitHub issue using the matching template, or contact the web team. See the triage policy for response times.

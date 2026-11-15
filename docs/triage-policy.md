@@ -1,10 +1,10 @@
 # Triage Policy for Web Requests
 
-Applies to requests from Data Science, Analysis, External Affairs and Development.
+Applies to requests from the Data, Research, Communications and Engineering teams.
 
 ## 1. Intake
 
-All requests come in as GitHub issues, using one of the issue templates: Bug, Feature, Content, SEO, Accessibility. Each template asks for: requesting team, page URL, what you expected, what happened or what you need, and a deadline if one exists. Requests sent by email or chat are redirected to a new issue by the web coordinator.
+All requests come in as GitHub issues, using one of the issue templates: Bug, Feature, Content, SEO, Accessibility. Each template asks for: requesting team, page URL, what you expected, what happened or what you need, and a deadline if one exists. Requests sent by email or chat are redirected to a new issue by the web team.
 
 ## 2. Labels
 
@@ -35,7 +35,7 @@ Priority is impact multiplied by urgency, each scored 1 to 3.
 | 3 to 4 | P3 |
 | 1 to 2 | P4 |
 
-The web coordinator sets the first priority. A requester can ask for review by commenting with the reason. Security issues and a public site outage are P1 regardless of score.
+The web team sets the first priority. A requester can ask for review by commenting with the reason. Security issues and a public site outage are P1 regardless of score.
 
 ## 4. Communication
 

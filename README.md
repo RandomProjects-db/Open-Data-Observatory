@@ -1,7 +1,7 @@
 # Open Data Observatory
 
 A Drupal 11 publications and open-data website for a **fictional** research
-organization, built and run end to end as a portfolio project.
+organization: an independent project, built and operated end to end.
 
 **Live site:** https://observatory.raiuz.site
 **Request board:** https://github.com/users/RandomProjects-db/projects/1
@@ -10,7 +10,7 @@ organization, built and run end to end as a portfolio project.
 It publishes 40 World Bank indicator datasets (8 countries, 5 indicators), data-driven
 country comparison reports, news, search, and accessible charts.
 
-## What it demonstrates
+## What's inside
 
 | Area | Where to look |
 |---|---|
