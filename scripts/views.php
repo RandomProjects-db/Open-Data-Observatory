@@ -79,8 +79,9 @@ function odo_listing(string $id, string $label, string $path, string $bundle, ar
       'label' => 'Title',
       'settings' => ['link_to_entity' => TRUE],
     ]);
-    foreach ($table_fields as [$table, $field, $flabel]) {
-      $exec->addHandler('default', 'field', $table, $field, ['label' => $flabel]);
+    foreach ($table_fields as $f) {
+      [$table, $field, $flabel] = $f;
+      $exec->addHandler('default', 'field', $table, $field, ['label' => $flabel] + ($f[3] ?? []));
     }
   }
 
@@ -109,7 +110,7 @@ odo_listing('datasets', 'Datasets', 'datasets', 'dataset', [
   ['node__field_country_code', 'field_country_code', 'Country'],
   ['node__field_topic', 'field_topic', 'Topic'],
   ['node__field_latest_year', 'field_latest_year', 'Latest year'],
-  ['node__field_latest_value', 'field_latest_value', 'Latest value'],
+  ['node__field_latest_value', 'field_latest_value', 'Latest value', ['type' => 'number_decimal', 'settings' => ['thousand_separator' => ',', 'decimal_separator' => '.', 'scale' => 2, 'prefix_suffix' => TRUE]]],
 ], 'Browse 40 World Bank indicator datasets for eight countries. Filter by region, topic or country and view each series as a chart and table.');
 
 odo_listing('news', 'News', 'news', 'article', [
