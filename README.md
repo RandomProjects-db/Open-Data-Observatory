@@ -1,5 +1,7 @@
 # Open Data Observatory
 
+[![CI](https://github.com/RandomProjects-db/Open-Data-Observatory/actions/workflows/ci.yml/badge.svg)](https://github.com/RandomProjects-db/Open-Data-Observatory/actions/workflows/ci.yml)
+
 A Drupal 11 publications and open-data website for a **fictional** research
 organization: an independent project, built and operated end to end.
 
