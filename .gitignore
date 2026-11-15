@@ -25,3 +25,6 @@ docs/reports/lighthouse/**/*.json
 
 # Environment-specific Drush site URI
 /drush/drush.yml
+
+# Private planning notes
+/PLAN.md
