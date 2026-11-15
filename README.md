@@ -1,6 +1,14 @@
 # Open Data Observatory
 
 [![CI](https://github.com/RandomProjects-db/Open-Data-Observatory/actions/workflows/ci.yml/badge.svg)](https://github.com/RandomProjects-db/Open-Data-Observatory/actions/workflows/ci.yml)
+[![Site status](https://img.shields.io/website?url=https%3A%2F%2Fobservatory.raiuz.site&label=site)](https://observatory.raiuz.site)
+[![Drupal 11.4](https://img.shields.io/badge/Drupal-11.4-0678BE?logo=drupal&logoColor=white)](https://www.drupal.org/project/drupal)
+[![PHP 8.3](https://img.shields.io/badge/PHP-8.3-777BB4?logo=php&logoColor=white)](https://www.php.net/)
+[![PHPUnit: 9 tests](https://img.shields.io/badge/PHPUnit-9%20tests-brightgreen)](web/modules/custom/odo_core/tests/src/Unit)
+[![PHPCS: Drupal standards](https://img.shields.io/badge/PHPCS-Drupal%20standards-brightgreen)](.github/workflows/ci.yml)
+[![Lighthouse: 100 in all categories](https://img.shields.io/badge/Lighthouse-100%20%C2%B7%20100%20%C2%B7%20100%20%C2%B7%20100-brightgreen?logo=lighthouse&logoColor=white)](docs/reports/accessibility-performance.md)
+[![License: GPL-2.0-or-later](https://img.shields.io/badge/license-GPL--2.0--or--later-blue)](LICENSE.txt)
+[![Last commit](https://img.shields.io/github/last-commit/RandomProjects-db/Open-Data-Observatory)](https://github.com/RandomProjects-db/Open-Data-Observatory/commits/main)
 
 A Drupal 11 publications and open-data website for a **fictional** research
 organization: an independent project, built and operated end to end.
