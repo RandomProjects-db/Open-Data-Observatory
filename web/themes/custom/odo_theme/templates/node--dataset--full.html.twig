@@ -4,22 +4,14 @@
  * Full view of a Dataset: summary, chart and an accessible data table.
  *
  * The table is the accessible source of truth; the SVG chart is drawn by
- * js/dataset-chart.js from the same series JSON.
+ * js/dataset-chart.js from the same series JSON. The chart comes right after
+ * the summary so it is visible without scrolling; facts follow.
  */
 #}
 {{ attach_library('odo_theme/dataset-chart') }}
 <article{{ attributes.addClass('node', 'node--type-dataset', 'node--view-mode-full') }}>
   <div{{ content_attributes.addClass('node__content') }}>
     {{ content.body }}
-
-    <div class="odo-facts">
-      {{ content.field_latest_value }}
-      {{ content.field_latest_year }}
-      {{ content.field_country_code }}
-      {{ content.field_indicator_code }}
-      {{ content.field_region }}
-      {{ content.field_topic }}
-    </div>
 
     {% if series is iterable and series|length > 1 %}
       <figure class="odo-chart" data-series="{{ series_json }}">
@@ -39,6 +31,15 @@
         </details>
       </figure>
     {% endif %}
+
+    <div class="odo-facts">
+      {{ content.field_latest_value }}
+      {{ content.field_latest_year }}
+      {{ content.field_country_code }}
+      {{ content.field_indicator_code }}
+      {{ content.field_region }}
+      {{ content.field_topic }}
+    </div>
 
     {{ content.field_source_url }}
   </div>

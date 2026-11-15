@@ -46,6 +46,11 @@ function odo_type(string $type, string $label, string $description): void {
     $node_type = NodeType::load($type);
     $node_type->set('name', $label)->set('description', $description)->save();
   }
+  // SECURITY: do not show "By <username>" on public pages; it exposes admin
+  // account names. Dates are shown in content where they matter.
+  $node_type = NodeType::load($type);
+  $node_type->setDisplaySubmitted(FALSE);
+  $node_type->save();
 }
 
 /**
@@ -71,10 +76,26 @@ function odo_field(string $bundle, string $name, string $type, string $label, ar
       'required' => $required,
     ])->save();
   }
-  // Show the field on the edit form and the full view.
+  // Show the field on the edit form and the full view. The body is the main
+  // text, so it gets no label; other fields show theirs inline. Existing
+  // components keep their weight so re-runs do not reorder fields.
   $repo = \Drupal::service('entity_display.repository');
-  $repo->getFormDisplay('node', $bundle)->setComponent($name)->save();
-  $repo->getViewDisplay('node', $bundle)->setComponent($name, ['label' => 'inline'])->save();
+  $form = $repo->getFormDisplay('node', $bundle);
+  if (!$form->getComponent($name)) {
+    $form->setComponent($name)->save();
+  }
+  $display = ['label' => $name === 'body' ? 'hidden' : 'inline'];
+  if ($type === 'decimal') {
+    $display += ['type' => 'number_decimal', 'settings' => ['thousand_separator' => ',', 'decimal_separator' => '.', 'scale' => 2, 'prefix_suffix' => TRUE]];
+  }
+  if ($type === 'integer' && $name !== 'field_year' && $name !== 'field_latest_year') {
+    $display += ['type' => 'number_integer', 'settings' => ['thousand_separator' => ',']];
+  }
+  $view = $repo->getViewDisplay('node', $bundle);
+  if ($existing = $view->getComponent($name)) {
+    $display = $display + $existing;
+  }
+  $view->setComponent($name, $display)->save();
 }
 
 /**
