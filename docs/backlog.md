@@ -8,7 +8,7 @@ with a **Fixed in** line are closed with a link to the commit.
 - **Reported by:** Development (smoke test)
 - **Type:** bug
 - **Priority:** P1
-- **Fixed in:** permissions fix, smoke test added in 1445f98
+- **Fixed in:** permissions fix, smoke test added in 8095b30
 
 Every page returned HTTP 500 after module files were synced with rsync. Files arrived with group `ubuntu` and mode 640, so PHP-FPM (`www-data`) could not read `odo_core.info.yml`. Fix: `chgrp -R www-data`, setgid on directories so new files inherit the group, and `scripts/smoke-test.sh` after every deploy.
 
@@ -16,7 +16,7 @@ Every page returned HTTP 500 after module files were synced with rsync. Files ar
 - **Reported by:** Data Science
 - **Type:** bug
 - **Priority:** P2
-- **Fixed in:** d93b03b
+- **Fixed in:** dee91f6
 
 The API intermittently accepts connections and sends no data. One import failed 13 of 40 series. Fix: short timeouts and up to 3 attempts with backoff; failures are logged and skipped, and re-runs are idempotent. Re-run imported all 40.
 
@@ -24,7 +24,7 @@ The API intermittently accepts connections and sends no data. One import failed 
 - **Reported by:** External Affairs
 - **Type:** bug
 - **Priority:** P2
-- **Fixed in:** 7cec251
+- **Fixed in:** 7a08747
 
 Core's `node_search` plugin is a deprecated stub on 11.4 that always denies access; its replacement module requires core 11.5. Fix: site search built with a Views combine filter at `/search`.
 
@@ -32,7 +32,7 @@ Core's `node_search` plugin is a deprecated stub on 11.4 that always denies acce
 - **Reported by:** Development (Lighthouse)
 - **Type:** bug
 - **Priority:** P3
-- **Fixed in:** ff61a90
+- **Fixed in:** e18b8cd
 
 The sub-theme referenced a missing `logo.svg` (404 and an unsized image). Fix: logo image turned off in the branding block; site name shown as text.
 
@@ -40,7 +40,7 @@ The sub-theme referenced a missing `logo.svg` (404 and an unsized image). Fix: l
 - **Reported by:** Analysis
 - **Type:** accessibility
 - **Priority:** P2
-- **Fixed in:** ff61a90
+- **Fixed in:** e18b8cd
 
 Lighthouse baseline flagged WCAG 1.4.1 (links distinguished only by colour) on the home page and 1.3.1 (h1 followed by h4) on /datasets. Fix: underline links in running text; pager heading set to h2.
 
@@ -48,7 +48,7 @@ Lighthouse baseline flagged WCAG 1.4.1 (links distinguished only by colour) on t
 - **Reported by:** External Affairs
 - **Type:** seo
 - **Priority:** P3
-- **Fixed in:** ff61a90
+- **Fixed in:** e18b8cd
 
 /reports and /datasets scored SEO 92. Fix: per-view descriptions with Metatag Views. All audited pages now score 100.
 
@@ -56,7 +56,7 @@ Lighthouse baseline flagged WCAG 1.4.1 (links distinguished only by colour) on t
 - **Reported by:** Data Science
 - **Type:** feature
 - **Priority:** P3
-- **Fixed in:** a3a9328
+- **Fixed in:** e9a5906
 
 Show each series as a chart, with the same figures in an accessible table.
 
